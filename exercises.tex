@@ -34,8 +34,15 @@ This document contains notes and exercises from~\cite{dieudonne}.
 
 \section*{Chapter~IV}
 \subsection*{Section~3}
-We provide an alternative proof of~(4.3.7):
+\begin{rmk}
+In the proof of~(4.3.1), intuitively we know that \(f=\log_a\). Recall by the density of the rationals in the reals (2.2.16) that \emph{a real number is the supremum of the set of rationals less than it}. Therefore \(\log_a x\)~is just the supremum of the set of rationals~\(m/n\) with \(m/n\le\log_a x\), or equivalently \(a^{m/n}\le x\), or equivalently \(a^m\le x^n\); that is, \(\log_a x=\sup A_x\). Since neither \(\log_a x\) nor~\(a^{m/n}\) are defined yet, but \(a^m\)~and~\(x^n\) are, it is natural to show that \(f(x)=\sup A_x\) for uniqueness.
 
+For existence, we know the set~\(A_x\) is well defined. Fix \(k\ge 1\) and choose~\(p,q\) by~(4.3.1.1) with \(a^p\le x^k\le a^q\). Then \(p/k\in A_x\), so \(A_x\)~is nonempty. If \(m/n\in A_x\) (\(n\ge 1\)), then \(a^m\le x^n\), so \(a^{mk}\le x^{nk}\le a^{qn}\), so \(mk\le qn\), and \(m/n\le q/k\); that is, \(A_x\)~is bounded above by~\(q/k\). Therefore \(f(x)=\sup A_x\)~is defined, and \(p/k\le f(x)\le q/k\). Taking \(q=p+1\) yields \(p/k\le f(x)\le(p+1)/k\), which is used in the proof that \(f(xy)=f(x)+f(y)\). Taking \(x=a\) and \(k=p=q=1\) yields \(f(a)=1\).
+
+
+\end{rmk}
+
+\noindent We provide an alternative proof of~(4.3.7):
 \begin{prop}[4.3.7]
 Any continuous mapping~\(g\) of~~\(\Rps\) into itself such that \(g(xy)=g(x)g(y)\) has the form \(x\mapsto x^a\), with \(a\in\R\).
 \end{prop}
