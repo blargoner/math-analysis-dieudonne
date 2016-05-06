@@ -57,6 +57,13 @@ where \(a=\log_c b\), by (4.3.3) and~(4.3.4).
 This proof is longer than Dieudonn\'e's, but avoids direct use of~(4.1.3), which is already used in the proof of~(4.3.2).
 \end{rmk}
 
+\subsection*{Section~5}
+\begin{rmk}
+In the proof of the Tietze-Urysohn extension theorem~(4.5.1), the idea behind the formula defining~\(g(x)\) for \(x\in E-A\) is roughly: \emph{for \(x\)~very near the boundary (frontier) of~\(A\), take the limit of~\(f(y)\) as \(y\in A\) approaches points near~\(x\)}:
+\[g(x)=\inf_{y\in A}\left[f(y)\frac{d(x,y)}{d(x,A)}\right]\qquad(x\in E-A)\]
+Write \(\rho_x(y)=d(x,y)/d(x,A)\). Since \(1\le f(y)\le 2\) by the reduction, \(\rho_x(y)\ge 1\), \(\rho_x(y)>2\) for \(y\)~sufficiently far from~\(x\), and \(\rho_x(y)\to 1\) as \(y\to x\), it follows that \(\inf_{y\in A}f(y)\rho_x(y)\) reflects values of~\(f(y)\) at \(y\)~nearest to~\(x\). This ensures continuity of~\(g\) on the boundary of~\(A\). Since \(g\)~is also continuous in the interior of~\(A\) (by continuity of~\(f\)), and in the exterior of~\(A\) (by continuity of the metric~\(d\)), \(g\)~is continuous on~\(E\).
+\end{rmk}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{dieudonne} Dieudonn\'e, J. \textit{Foundations of Modern Analysis.} Academic Press, 1960.
