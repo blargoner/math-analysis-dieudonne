@@ -3,13 +3,18 @@
 \documentclass[letterpaper,12pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\Nex}{\overline{\N}}
 \newcommand{\R}{\mathbf{R}}
 \newcommand{\Rp}{\R_+}
 \newcommand{\Rps}{\Rp^*}
+\newcommand{\Rex}{\overline{\R}}
 
+\newcommand{\union}{\cup}
 \newcommand{\after}{\circ}
 
 \newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\norm}[1]{\lVert{#1}\rVert}
 
 % Theorems
 \theoremstyle{plain}
@@ -62,6 +67,14 @@ This proof is longer than Dieudonn\'e's, but avoids direct use of~(4.1.3), which
 In the proof of the Tietze-Urysohn extension theorem~(4.5.1), the idea behind the formula defining~\(g(x)\) for \(x\in E-A\) is roughly: \emph{for \(x\)~very near the boundary (frontier) of~\(A\), take the limit of~\(f(y)\) as \(y\in A\) approaches points near~\(x\)}:
 \[g(x)=\inf_{y\in A}\left[f(y)\frac{d(x,y)}{d(x,A)}\right]\qquad(x\in E-A)\]
 Write \(\rho_x(y)=d(x,y)/d(x,A)\). Since \(1\le f(y)\le 2\) by the reduction, \(\rho_x(y)\ge 1\), \(\rho_x(y)>2\) for \(y\)~sufficiently far from~\(x\), and \(\rho_x(y)\to 1\) as \(y\to x\), it follows that \(\inf_{y\in A}f(y)\rho_x(y)\) reflects values of~\(f(y)\) at \(y\)~nearest to~\(x\). This ensures continuity of~\(g\) on the boundary of~\(A\). Since \(g\)~is also continuous in the interior of~\(A\) (by continuity of~\(f\)), and in the exterior of~\(A\) (by continuity of the metric~\(d\)), \(g\)~is continuous on~\(E\).
+\end{rmk}
+
+\section*{Chapter~V}
+\subsection*{Section~3}
+\begin{rmk}
+In the proof of~(5.3.2), to see how the inequality \(\norm{\sum_{n=0}^{\infty}x_n}\le\sum_{n=0}^{\infty}\norm{x_n}\) follows from the principle of extension of inequalities~(3.15.4), recall from the definition of sequential limit in~(3.13) that the functions given by
+\[s(k)=\sum_{n=0}^k x_n\quad s(\infty)=\sum_{n=0}^{\infty}x_n\qquad\text{and}\qquad t(k)=\sum_{n=0}^k\norm{x_n}\quad t(\infty)=\sum_{n=0}^{\infty}\norm{x_n}\]
+are \emph{continuous} on \(\N\union\{\infty\}=\Nex\subseteq\Rex\). By continuity of the norm, the composite function \(k\mapsto\norm{s(k)}\) is also continuous on~\(\Nex\). Now \(\norm{s(k)}\le t(k)\) for all \(k\in\N\) and \(\N\)~is dense in~\(\Nex\), hence \(\norm{s(\infty)}\le t(\infty)\) by~(3.15.4), as desired. Other applications of the principle of extension are similar.
 \end{rmk}
 
 % References
