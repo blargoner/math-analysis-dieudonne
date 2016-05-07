@@ -11,6 +11,7 @@
 \newcommand{\Rex}{\overline{\R}}
 
 \newcommand{\union}{\cup}
+\newcommand{\sect}{\cap}
 \newcommand{\after}{\circ}
 
 \newcommand{\inv}[1]{#1^{-1}}
@@ -75,6 +76,18 @@ Write \(\rho_x(y)=d(x,y)/d(x,A)\). Since \(1\le f(y)\le 2\) by the reduction, \(
 In the proof of~(5.3.2), to see how the inequality \(\norm{\sum_{n=0}^{\infty}x_n}\le\sum_{n=0}^{\infty}\norm{x_n}\) follows from the principle of extension of inequalities~(3.15.4), recall from the definition of sequential limit in~(3.13) that the functions given by
 \[s(n)=\sum_{k=0}^n x_k\quad s(\infty)=\sum_{k=0}^{\infty}x_k\qquad\text{and}\qquad t(n)=\sum_{k=0}^n\norm{x_k}\quad t(\infty)=\sum_{k=0}^{\infty}\norm{x_k}\]
 are \emph{continuous} on \(\N\union\{\infty\}=\Nex\subseteq\Rex\). By continuity of the norm, the composite function \(n\mapsto\norm{s(n)}\) is also continuous on~\(\Nex\). Now \(\norm{s(n)}\le t(n)\) for all \(n\in\N\) and \(\N\)~is dense in~\(\Nex\), hence \(\norm{s(\infty)}\le t(\infty)\) by~(3.15.4), as desired. Other applications of the principle of extension are similar.
+\end{rmk}
+
+\begin{rmk}
+In~(5.3.4), \(\sum_{\alpha\in A}\norm{x_{\alpha}}=\sup\left\{\,\sum_{\alpha\in J}\norm{x_{\alpha}}\mid J\subseteq A\text{ finite}\,\right\}\) by~(5.3.1). This is implicit in the proof of~(5.3.5).
+\end{rmk}
+
+\begin{rmk}
+In~(5.3.4), \(2\epsilon\)~can be replaced by~\(\epsilon\), since \(H\)~can be chosen for~\(\epsilon/2\).
+\end{rmk}
+
+\begin{rmk}
+In the proof of~(5.3.4), to construct~\(H\), first fix a bijection \(\varphi:\N\to A\). Then \(\sum_{n=0}^{\infty}\norm{x_{\varphi(n)}}\) converges, so there exists~\(M\) such that for all \(n\ge m\ge M\), \(\sum_{k=m}^n\norm{x_{\varphi(k)}}\le\epsilon\) (5.2.1). Let \(H=\varphi[0,M)\). Then if \(K\subseteq A\) is finite with \(H\sect K=\emptyset\), \(\inv{\varphi}[K]\subseteq[M,\infty)\), so if \(N=\max\inv{\varphi}[K]\), then \(\sum_{\alpha\in K}\norm{x_{\alpha}}\le\sum_{k=M}^N\norm{x_k}\le\epsilon\). Also \(\norm{\sum_{\alpha\in A}x_{\alpha}-\sum_{\alpha\in H}x_{\alpha}}=\norm{\sum_{n=M}^{\infty}x_{\varphi(n)}}\le\sum_{n=M}^{\infty}\norm{x_{\varphi(n)}}\le\epsilon\) by (5.3.1)~and~(5.3.2). Finally, if \(L\)~is finite with \(H\subseteq L\subseteq A\), then \(L-H\)~is finite with \((L-H)\sect H=\emptyset\), so \(\norm{\sum_{\alpha\in H}x_{\alpha}-\sum_{\alpha\in L}x_{\alpha}}=\norm{\sum_{\alpha\in L-H}x_{\alpha}}\le\sum_{\alpha\in L-H}\norm{x_{\alpha}}\le\epsilon\), and it follows that \(\norm{\sum_{\alpha\in A}x_{\alpha}-\sum_{\alpha\in L}x_{\alpha}}\le 2\epsilon\).
 \end{rmk}
 
 % References
