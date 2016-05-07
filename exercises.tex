@@ -71,6 +71,11 @@ Write \(\rho_x(y)=d(x,y)/d(x,A)\). Since \(1\le f(y)\le 2\) by the reduction, \(
 \end{rmk}
 
 \section*{Chapter~V}
+\subsection*{Section~2}
+\begin{rmk}
+(5.2.4)~is an associativity property for convergent series. For \emph{absolutely} convergent series, (5.3.6)~is a stronger associativity property. For example, if \(\sum_{n=0}^{\infty}x_n\) is absolutely convergent, then it follows from the remark below~(5.3.6), but not from~(5.2.4), that \(\sum_{n=0}^{\infty}x_n=\sum_{n=0}^{\infty}x_{2n}+\sum_{n=0}^{\infty}x_{2n+1}\).
+\end{rmk}
+
 \subsection*{Section~3}
 \begin{rmk}
 In the proof of~(5.3.2), to see how the inequality \(\norm{\sum_{n=0}^{\infty}x_n}\le\sum_{n=0}^{\infty}\norm{x_n}\) follows from the principle of extension of inequalities~(3.15.4), recall from the definition of sequential limit in~(3.13) that the functions given by
@@ -88,6 +93,10 @@ In~(5.3.4), \(2\epsilon\)~can be replaced by~\(\epsilon\), since \(H\)~can be ch
 
 \begin{rmk}
 In the proof of~(5.3.4), to construct~\(H\), first fix a bijection \(\varphi:\N\to A\). Then \(\sum_{n=0}^{\infty}\norm{x_{\varphi(n)}}\) converges, so there exists~\(M\) such that for all \(n\ge m\ge M\), \(\sum_{k=m}^n\norm{x_{\varphi(k)}}\le\epsilon\) (5.2.1). Let \(H=\varphi[0,M)\). Then if \(K\subseteq A\) is finite with \(H\sect K=\emptyset\), \(\inv{\varphi}[K]\subseteq[M,\infty)\), so if \(N=\max\inv{\varphi}[K]\), then \(\sum_{\alpha\in K}\norm{x_{\alpha}}\le\sum_{k=M}^N\norm{x_k}\le\epsilon\). Also \(\norm{\sum_{\alpha\in A}x_{\alpha}-\sum_{\alpha\in H}x_{\alpha}}=\norm{\sum_{n=M}^{\infty}x_{\varphi(n)}}\le\sum_{n=M}^{\infty}\norm{x_{\varphi(n)}}\le\epsilon\) by (5.3.1)~and~(5.3.2). Finally, if \(L\)~is finite with \(H\subseteq L\subseteq A\), then \(L-H\)~is finite with \((L-H)\sect H=\emptyset\), so \(\norm{\sum_{\alpha\in H}x_{\alpha}-\sum_{\alpha\in L}x_{\alpha}}=\norm{\sum_{\alpha\in L-H}x_{\alpha}}\le\sum_{\alpha\in L-H}\norm{x_{\alpha}}\le\epsilon\), and it follows that \(\norm{\sum_{\alpha\in A}x_{\alpha}-\sum_{\alpha\in L}x_{\alpha}}\le 2\epsilon\).
+\end{rmk}
+
+\begin{rmk}
+In the proof of~(5.3.6), the idea is to use finite approximations of finitely many of the~\(z_n\) to obtain a finite approximation of~\(\sum_{\alpha\in A}x_\alpha\).
 \end{rmk}
 
 % References
