@@ -16,6 +16,7 @@
 \newcommand{\after}{\circ}
 
 \newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\abs}[1]{|{#1}|}
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
 
 % Theorems
@@ -98,6 +99,19 @@ In the proof of~(5.3.4), to construct~\(H\), first fix a bijection \(\varphi:\N\
 
 \begin{rmk}
 In the proof of~(5.3.6), the idea is to use finite approximations of finitely many of the~\(z_n\) to obtain a finite approximation of~\(\sum_{\alpha\in A}x_\alpha\).
+\end{rmk}
+
+\subsection*{Section~5}
+\begin{rmk}
+In a Banach space, \(\lambda\sum_{n=0}^{\infty}x_n=\sum_{n=0}^{\infty}\lambda x_n\) for any scalar~\(\lambda\), when either series converges, by (5.1.5)~and~(5.5.2).
+\end{rmk}
+
+\begin{rmk}
+Let \(L_1(I)\)~be the space of Lebesgue integrable real-valued functions\footnote{Technically this space consists of equivalence classes of functions.} on the interval \(I\subseteq\R\) with norm \(\norm{f}_1=\int_I\abs{f}\). Then \(L_1(I)\)~is a Banach space (Riesz-Fischer). The integral operator \(f\mapsto\int_If\) is linear and continuous since \(\abs{\int_If}\le\int_I\abs{f}\) (5.5.1). Therefore if \(f=\sum_{n=0}^{\infty}f_n\) under convergence in the norm, then \(\int_I f=\sum_{n=0}^{\infty}\int_I f_n\) (5.5.2).
+\end{rmk}
+
+\begin{rmk}
+The multiplication operation \((x,y)\mapsto xy\) from~\(\C^2\) to~\(\C\) is bilinear and continuous by~(4.4.1), hence if \(\sum_{n=0}^{\infty}x_n\) and \(\sum_{n=0}^{\infty}y_n\) are absolutely convergent series of complex numbers, then \((\sum_{n=0}^{\infty}x_n)(\sum_{n=0}^{\infty}y_n)=\sum_{m,n}x_my_n\), where the latter sum may be taken \emph{in any order}, by~(5.5.3).
 \end{rmk}
 
 % References
