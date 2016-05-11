@@ -10,14 +10,17 @@
 \newcommand{\Rps}{\Rp^*}
 \newcommand{\Rex}{\overline{\R}}
 \newcommand{\C}{\mathbf{C}}
+\renewcommand{\Re}{\mathcal{R}}
 
 \newcommand{\union}{\cup}
 \newcommand{\sect}{\cap}
 \newcommand{\after}{\circ}
+\newcommand{\downto}{\downarrow}
 
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\abs}[1]{|{#1}|}
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
+\newcommand{\innerprod}[2]{({#1}|{#2})}
 
 % Theorems
 \theoremstyle{plain}
@@ -117,6 +120,28 @@ The multiplication operation \((x,y)\mapsto xy\) from~\(\C^2\) to~\(\C\) is bili
 \subsection*{Section~8}
 \begin{rmk}
 Intuitively, a \emph{closed} hyperplane separates a vector space into the two half-spaces on either side of the hyperplane, but a \emph{dense} hyperplane does not have this property.
+\end{rmk}
+
+\section*{Chapter~VI}
+\subsection*{Section~3}
+\begin{rmk}
+(6.3.1.1)~is the \emph{parallelogram law}, which states that the sum of the squares of the lengths of the diagonals of a parallelogram is equal to the sum of the squares of the lengths of its sides.
+\end{rmk}
+
+\begin{rmk}
+In the proof of~(6.3.1),
+\begin{align*}
+\norm{x-(y+\lambda z)}^2&=\innerprod{x-y-\lambda z}{x-y-\lambda z}\\
+	&=\norm{x-y}^2-\lambda[\innerprod{x-y}{z}+\innerprod{z}{x-y}]+\lambda^2\norm{z}^2\\
+	&=\alpha^2-2\lambda\Re\innerprod{x-y}{z}+\lambda^2\norm{z}^2>\alpha^2
+\end{align*}
+so
+\[-2\lambda\Re\innerprod{x-y}{z}+\lambda^2\norm{z}^2>0\tag{1}\]
+Substituting~\(-\lambda\) for~\(\lambda\) in~(1) yields
+\[2\lambda\Re\innerprod{x-y}{z}+\lambda^2\norm{z}^2>0\tag{2}\]
+Now (1)~and~(2) imply
+\[\abs{\Re\innerprod{x-y}{z}}<\lambda\frac{\norm{z}^2}{2}\qquad(\lambda>0)\]
+Letting \(\lambda\downto 0\) shows \(\Re\innerprod{x-y}{z}=0\).
 \end{rmk}
 
 % References
