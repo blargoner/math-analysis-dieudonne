@@ -17,6 +17,7 @@
 \newcommand{\after}{\circ}
 \newcommand{\downto}{\downarrow}
 
+\newcommand{\closure}[1]{\overline{#1}}
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\abs}[1]{|{#1}|}
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
@@ -115,6 +116,12 @@ Let \(L_1(I)\)~be the space of Lebesgue integrable real-valued functions\footnot
 
 \begin{rmk}
 The multiplication operation \((x,y)\mapsto xy\) from~\(\C^2\) to~\(\C\) is bilinear and continuous by~(4.4.1), hence if \(\sum_{n=0}^{\infty}x_n\) and \(\sum_{n=0}^{\infty}y_n\) are absolutely convergent series of complex numbers, then \((\sum_{n=0}^{\infty}x_n)(\sum_{n=0}^{\infty}y_n)=\sum_{m,n}x_my_n\), where the latter sum may be taken \emph{in any order}, by~(5.5.3).
+\end{rmk}
+
+\begin{rmk}
+In the proof of~(5.5.4), to see how the linearity of~\(\closure{f}\) follows from the principle of extension of identities~(3.15.2), observe that the mappings
+\[(x,y)\mapsto x+y\mapsto\closure{f}(x+y)\qquad\text{and}\qquad(x,y)\mapsto(\closure{f}(x),\closure{f}(y))\mapsto\closure{f}(x)+\closure{f}(y)\]
+are continuous by (3.11.5), (3.20.15), and~(5.1.5), and agree on~\(G^2\), which is dense in~\(E^2\) by~(3.20.3), and hence agree on~\(E^2\) by~(3.15.2). Other applications of the principle of extension are similar.
 \end{rmk}
 
 \subsection*{Section~8}
