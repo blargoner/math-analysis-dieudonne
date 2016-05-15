@@ -11,11 +11,13 @@
 \newcommand{\Rex}{\overline{\R}}
 \newcommand{\C}{\mathbf{C}}
 \renewcommand{\Re}{\mathcal{R}}
+\newcommand{\B}{\mathcal{B}}
 
 \newcommand{\union}{\cup}
 \newcommand{\sect}{\cap}
 \newcommand{\after}{\circ}
 \newcommand{\downto}{\downarrow}
+\newcommand{\iso}{\cong}
 
 \newcommand{\conj}[1]{\overline{#1}}
 \newcommand{\closure}[1]{\overline{#1}}
@@ -167,6 +169,16 @@ In the proof of~(6.5.2), to see how the result follows from~(6.4.2), let \(\varp
 so \(x=\sum_{n=1}^{\infty}\innerprod{x}{a_n}a_n\). If \(y\in F\), then
 \[\innerprod{x}{y}=\innerprod{\varphi(x)}{\varphi(y)}=\sum_{n=1}^{\infty}\innerprod{\varphi(x)}{\varphi(a_n)}\conj{\innerprod{\varphi(y)}{\varphi(a_n)}}=\sum_{n=1}^{\infty}\innerprod{x}{a_n}\conj{\innerprod{y}{a_n}}\]
 In particular \(\norm{x}^2=\sum_{n=1}^{\infty}\abs{\innerprod{x}{a_n}}^2\). If \((\lambda_n)\)~is a sequence of scalars with \(\sum_{n=1}^{\infty}\abs{\lambda_n}^2\) convergent, then \(z=(\lambda_na_n)\in E\) and \(x=\inv{\varphi}(z)\) is unique such that \(\innerprod{x}{a_n}=\innerprod{z}{\varphi(a_n)}=\lambda_n\).
+\end{rmk}
+
+\section*{Chapter~VII}
+\subsection*{Section~1}
+\begin{rmk}
+In~(7.1.2.1), the mappings~\(f_i\) are the \emph{scalar component functions} of~\(f\), and the mappings \(t\mapsto f_i(t)a_i\) are the \emph{vector component functions} of~\(f\).
+
+(7.1.2)~shows that if \(F\)~is finite-dimensional, then \(\B_F(A)\)~decomposes into subspaces of vector component functions, each of which is isomorphic to a space of scalar component functions. By~(5.9.1), this result can be expressed in the equivalent form
+\[\B_{K^n}(A)\iso\B_K(A)^n\]
+where \(K=\R\) or \(K=\C\).
 \end{rmk}
 
 % References
