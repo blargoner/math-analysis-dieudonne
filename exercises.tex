@@ -17,6 +17,7 @@
 \newcommand{\after}{\circ}
 \newcommand{\downto}{\downarrow}
 
+\newcommand{\conj}[1]{\overline{#1}}
 \newcommand{\closure}[1]{\overline{#1}}
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\abs}[1]{|{#1}|}
@@ -149,6 +150,23 @@ Substituting~\(-\lambda\) for~\(\lambda\) in~(1) yields
 Now (1)~and~(2) imply
 \[\abs{\Re\innerprod{x-y}{z}}<\lambda\frac{\norm{z}^2}{2}\qquad(\lambda>0)\]
 Letting \(\lambda\downto 0\) shows \(\Re\innerprod{x-y}{z}=0\).
+\end{rmk}
+
+\subsection*{Section~5}
+\begin{rmk}
+If \(E\)~is the Hilbert sum of a normal system~\((a_n)\) and \(x=(x_n)\in E\), then \(x_n=\lambda_n a_n\) with
+\[\innerprod{x}{j_n(a_n)}=\sum_{m=1}^{\infty}\innerprod{\lambda_ma_m}{\delta_{mn}a_m}=\lambda_n\norm{a_n}^2=\lambda_n\]
+It follows that \(x=\sum_{n=1}^{\infty}\innerprod{x}{j_n(a_n)}j_n(a_n)\) and this representation in~\((j_n(a_n))\) is unique. If \(y\in E\),
+\[\innerprod{x}{y}=\sum_{n=1}^{\infty}\innerprod{x}{j_n(a_n)}\conj{\innerprod{y}{j_n(a_n)}}\]
+In particular \(\norm{x}^2=\sum_{n=1}^{\infty}\abs{\innerprod{x}{j_n(a_n)}}^2\).
+\end{rmk}
+
+\begin{rmk}
+In the proof of~(6.5.2), to see how the result follows from~(6.4.2), let \(\varphi\)~be the isomorphism of~\(F\) onto the Hilbert sum~\(E\) of the~\(a_n\) with \(\varphi(a_n)=j_n(a_n)\). If \(x\in F\), by the previous remark and properties of~\(\varphi\),
+\[\varphi(x)=\sum_{n=1}^{\infty}\innerprod{\varphi(x)}{\varphi(a_n)}\varphi(a_n)=\varphi\left[\sum_{n=1}^{\infty}\innerprod{x}{a_n}a_n\right]\]
+so \(x=\sum_{n=1}^{\infty}\innerprod{x}{a_n}a_n\). If \(y\in F\), then
+\[\innerprod{x}{y}=\innerprod{\varphi(x)}{\varphi(y)}=\sum_{n=1}^{\infty}\innerprod{\varphi(x)}{\varphi(a_n)}\conj{\innerprod{\varphi(y)}{\varphi(a_n)}}=\sum_{n=1}^{\infty}\innerprod{x}{a_n}\conj{\innerprod{y}{a_n}}\]
+In particular \(\norm{x}^2=\sum_{n=1}^{\infty}\abs{\innerprod{x}{a_n}}^2\). If \((\lambda_n)\)~is a sequence of scalars with \(\sum_{n=1}^{\infty}\abs{\lambda_n}^2\) convergent, then \(z=(\lambda_na_n)\in E\) and \(x=\inv{\varphi}(z)\) is unique such that \(\innerprod{x}{a_n}=\innerprod{z}{\varphi(a_n)}=\lambda_n\).
 \end{rmk}
 
 % References
