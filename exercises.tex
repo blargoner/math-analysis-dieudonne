@@ -206,6 +206,13 @@ The proof of Dini's theorem~(7.2.2) is like the proof of~(7.2.1) ``turned on its
 If a function~\(f\) is differentiable at a point~\(x_0\), then change in~\(f\) \emph{at~\(x_0\)} is well approximated by~\(f'(x_0)\). If \(f\)~is \emph{continuously} differentiable at~\(x_0\), then change in~\(f\) \emph{between any two points sufficiently close to~\(x_0\)} is well approximated by~\(f'(x_0)\), by (8.6.2).\footnote{See also Problem~3.}
 \end{rmk}
 
+\subsection*{Section~7}
+\begin{rmk}
+In the proof of~(8.7.3), to see how the inequality follows from~(8.5.2), let \(h(x)=g(x)-f(\xi)x\). Since \(g\)~is a primitive of~\(f\), there is a denumerable set \(D\subseteq I\) such that for all \(x\in I-D\), \(h'(x)=f(x)-f(\xi)\). It follows from~(8.5.2) that for any \(0\le\zeta\le\lambda\),
+\[\norm{h(\xi+\zeta)-h(\xi)}\le\zeta\sup_{0\le\eta\le\lambda}\norm{f(\xi+\eta)-f(\xi)}\]
+as desired. This is like the proof of~(8.6.2) from~(8.5.4).
+\end{rmk}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{dieudonne} Dieudonn\'e, J. \textit{Foundations of Modern Analysis.} Academic Press, 1960.
