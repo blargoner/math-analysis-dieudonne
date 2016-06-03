@@ -26,6 +26,7 @@
 \newcommand{\abs}[1]{|{#1}|}
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
 \newcommand{\innerprod}[2]{({#1}|{#2})}
+\newcommand{\cbprod}[2]{[{#1}\cdot{#2}]}
 
 % Theorems
 \theoremstyle{plain}
@@ -225,15 +226,41 @@ If a function~\(f\) is differentiable at a point~\(x_0\), then change in~\(f\) \
 
 \subsection*{Section~7}
 \begin{rmk}
+By~(7.6.1), a regulated function \(f:I\to\R\), where \(I\subseteq\R\) is a compact interval, is uniformly approximated by real-valued step functions, and hence intuitively has a well defined ``area under its curve'', namely the limit of the areas under its approximating step functions.
+
+On the other hand, in the proof of~(8.7.2), we see that a primitive of a step function gives the area under its curve, and since the primitive of~\(f\) is just the limit of the primitives of its approximating step functions (8.6.4), the primitive of~\(f\) gives the area under~\(f\). This motivates the definition of the integral in terms of primitives (the Cauchy integral).
+\end{rmk}
+
+\begin{rmk}
+The Cauchy integral makes one half of the fundamental theorem of calculus true by definition; the other half is~(8.7.3).
+\end{rmk}
+
+\begin{rmk}
 In the proof of~(8.7.3), to see how the inequality follows from~(8.5.2), let \(h(x)=g(x)-f(\xi)x\). Since \(g\)~is a primitive of~\(f\), there is a denumerable set \(D\subseteq I\) such that for all \(x\in I-D\), \(h'(x)=f(x)-f(\xi)\). It follows from~(8.5.2) that for any \(0\le\zeta\le\lambda\),
 \[\norm{h(\xi+\zeta)-h(\xi)}\le\zeta\sup_{0\le\eta\le\lambda}\norm{f(\xi+\eta)-f(\xi)}\]
 as desired. This is like the proof of~(8.6.2) from~(8.5.4).
 \end{rmk}
 
 \begin{rmk}
-By~(7.6.1), a regulated function \(f:I\to\R\), where \(I\subseteq\R\) is a compact interval, is uniformly approximated by real-valued step functions, and hence intuitively has a well defined ``area under its curve'', namely the limit of the areas under its approximating step functions.
+In the proof of~(8.7.4), to see that \(\xi\mapsto f(\varphi(\xi))\varphi'(\xi)\) is regulated, first note that if \(f\)~is continuous, then \(f\after\varphi\)~is continuous by~(3.11.5), and hence regulated, by~(7.6.2); on the other hand if \(\varphi\)~is monotone, then \(f\after\varphi\)~is regulated by a remark from~(7.6) above. Since \(\varphi'\)~is also regulated,
+\[\xi\mapsto(f(\varphi(\xi)),\varphi'(\xi))\mapsto f(\varphi(\xi))\varphi'(\xi)\]
+is regulated by~(5.1.5) and remarks from~(7.6) above.
+\end{rmk}
 
-On the other hand, in the proof of~(8.7.2), we see that a primitive of a step function gives the area under its curve, and since the primitive of~\(f\) is just the limit of the primitives of its approximating step functions (8.6.4), the primitive of~\(f\) gives the area under~\(f\). This motivates the definition of the integral in terms of primitives (the Cauchy integral).
+\begin{rmk}
+In the proof of~(8.7.5), note for example
+\[\xi\mapsto(f(\xi),g'(\xi))\mapsto\cbprod{f(\xi)}{g'(\xi)}\]
+is regulated, by (7.6.2)~and remarks from~(7.6) above. Also note use of additivity of the integral in the proof, which follows from~(8.2.2).
+\end{rmk}
+
+\begin{rmk}
+In the proof of~(8.7.6), \(u\after f\)~is regulated, by a remark from~(7.6) above.
+\end{rmk}
+
+\begin{rmk}
+In the proof of the mean value theorem for integrals~(8.7.7), \(\xi\mapsto\norm{f(\xi)}\) is regulated, by a remark from~(7.6) above. If \(g\)~is a primitive of~\(f\) and \(h\)~is a primitive of \(\xi\mapsto\norm{f(\xi)}\) (8.7.2), then for all~\(\xi\) not in some denumerable set~\(D\), \(\norm{g'(\xi)}\le h'(\xi)\), hence
+\[\norm{g(\beta)-g(\alpha)}\le h(\beta)-h(\alpha)\le(\beta-\alpha)\sup_{\xi\in I-D} h'(\xi)\]
+by (8.5.1) and~(8.5.2), as desired.
 \end{rmk}
 
 % References
