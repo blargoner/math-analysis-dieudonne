@@ -27,6 +27,8 @@
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
 \newcommand{\innerprod}[2]{({#1}|{#2})}
 \newcommand{\cbprod}[2]{[{#1}\cdot{#2}]}
+\renewcommand{\d}[1]{\,d\!{#1}}
+\newcommand{\dx}{\d{x}}
 
 % Theorems
 \theoremstyle{plain}
@@ -261,6 +263,13 @@ In the proof of~(8.7.6), \(u\after f\)~is regulated, by a remark from~(7.6) abov
 In the proof of the mean value theorem for integrals~(8.7.7), \(\xi\mapsto\norm{f(\xi)}\) is regulated, by a remark from~(7.6) above. If \(g\)~is a primitive of~\(f\) and \(h\)~is a primitive of \(\xi\mapsto\norm{f(\xi)}\) (8.7.2), then for all~\(\xi\) not in some denumerable set~\(D\), \(\norm{g'(\xi)}\le h'(\xi)\), hence
 \[\norm{g(\beta)-g(\alpha)}\le h(\beta)-h(\alpha)\le(\beta-\alpha)\sup_{\xi\in I-D} h'(\xi)\]
 by (8.5.1) and~(8.5.2), as desired.
+\end{rmk}
+
+\subsection*{Section~8}
+\begin{rmk}
+The function \(1/x\)~is regulated on~\([1,a]\) by (4.1.4) and~(7.6.2), and
+\[\int_1^a1/x\,\dx=\log a-\log 1=\log a\]
+since \(\log x\)~is a primitive of~\(1/x\). This integral can serve as a definition of~\(\log a\).
 \end{rmk}
 
 % References
