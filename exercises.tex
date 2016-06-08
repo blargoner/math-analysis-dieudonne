@@ -13,6 +13,7 @@
 \renewcommand{\Re}{\mathcal{R}}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\BC}{\mathcal{C}^{\infty}}
+\renewcommand{\L}{\mathcal{L}}
 
 \newcommand{\union}{\cup}
 \newcommand{\sect}{\cap}
@@ -270,6 +271,25 @@ by (8.5.1) and~(8.5.2), as desired.
 The function \(1/x\)~is regulated on~\([1,a]\) by (4.1.4) and~(7.6.2), and
 \[\int_1^a1/x\,\dx=\log a-\log 1=\log a\]
 since \(\log x\)~is a primitive of~\(1/x\). This integral can serve as a definition of~\(\log a\).
+\end{rmk}
+
+\subsection*{Section~9}
+\begin{rmk}
+In the remarks above~(8.9.1), the partial mappings \(x_1\mapsto f(x_1,a_2)\) and \(x_2\mapsto f(a_1,x_2)\) are continuous on open subsets of \(E_1\) and~\(E_2\), respectively, by (3.20.12) and~(3.20.14), so it makes sense to talk about their differentiability.
+\end{rmk}
+
+\begin{rmk}
+In the proof of~(8.9.1), note (8.9.1.1)~holds as long as \(f\)~is \emph{differentiable} at~\((x_1,x_2)\); it implies
+\[Df(x_1,x_2)=D_1f(x_1,x_2)\after p_1+D_2f(x_1,x_2)\after p_2\]
+which implies\footnote{The equation in the book is incorrect.}
+\[Df=P_1\after D_1f+P_2\after D_2f\]
+where \(P_i(\varphi)=\varphi\after p_i\). Now \(P_i\in\L(\L(E_i,F),\L(E_1\times E_2,F))\) by (5.7.5) and~(5.5.1), so \(Df\)~is continuous if \(D_1f\) and~\(D_2f\) are.
+\end{rmk}
+
+\begin{rmk}
+In~(8.9.2), let \(g=(g_i)\) and \(h=f\after g\), so \(g\)~is differentiable by~(8.1.5) with \(Dg(x)=(Dg_i(x))\) and \(h\)~is differentiable by the chain rule~(8.2.1) with \(Dh(x)=Df(g(x))\after Dg(x)\). It follows from~(8.9.1) that\footnote{The equation in the book is incorrect.}
+\[Dh(x)=\sum_{i=1}^nD_if(g(x))\after Dg_i(x)\]
+and hence that \(Dh\)~is continuous (by reasoning as in the previous remark).
 \end{rmk}
 
 % References
