@@ -18,6 +18,7 @@
 \newcommand{\union}{\cup}
 \newcommand{\sect}{\cap}
 \newcommand{\after}{\circ}
+\newcommand{\grad}{\nabla}
 \newcommand{\downto}{\downarrow}
 \newcommand{\iso}{\cong}
 
@@ -293,6 +294,12 @@ This holds as long as \(f\)~and the~\(g_i\) are \emph{differentiable} (by the pr
 \end{rmk}
 
 \subsection*{Section~10}
+\begin{rmk}
+In~(A), if \(F\)~is \(\R\) or~\(\C\), then \(D_kf(\alpha_1,\ldots,\alpha_n)\)~is identified to a \emph{scalar}. For \(\grad f(\alpha_1,\ldots,\alpha_n)=(D_kf(\alpha_1,\ldots,\alpha_n))\in E\),
+\[f'(\alpha_1,\ldots,\alpha_n)(x)=\grad f(\alpha_1,\ldots,\alpha_n)\cdot x\]
+where the product on the right is the dot product in~\(E\). The vector \(\grad f(\alpha_1,\ldots,\alpha_n)\) is the \emph{gradient} of~\(f\) at~\((\alpha_1,\ldots,\alpha_n)\) and has important geometric properties.
+\end{rmk}
+
 \begin{rmk}
 In~(8.10.1), let \(K\)~be \(\R\) or~\(\C\), \(\varphi=(\varphi_i):K^n\to K^m\), \(\psi=(\psi_i):K^m\to K^p\), and \(\theta=(\theta_i)=\psi\after\varphi:K^n\to K^p\). Then by the chain rule~(8.2.1), \(\theta\)~is differentiable and \(D\theta(x)=D\psi(\varphi(x))\after D\varphi(x)\). It follows from the remarks above~(8.10.1) that\footnote{The equation in the book is incorrect.}
 \[(D_k\theta_i(x))=(D_j\psi_i(\varphi(x)))(D_k\varphi_j(x))\]
