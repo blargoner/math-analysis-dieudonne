@@ -318,6 +318,15 @@ D^2f(x_0)\at(s,t)=(D^2f(x_0)\at s)\at t&\approx Df(x_0+s)\at t-Df(x_0)\at t\\
 	&\approx(D^2f(x_0)\at t)\at s=D^2f(x_0)\at(t,s)
 \end{align*}
 It is therefore plausible that \(D^2f(x_0)\at(s,t)=D^2f(x_0)\at(t,s)\), in other words that \(D^2f(x_0)\)~is symmetric. The proof uses the mean value theorem (8.6.2) to bound the distances between approximately equal quantities above, and ultimately to establish symmetry.
+
+In the proof, let \(\beta=2\epsilon\norm{s}(\norm{s}+\norm{t})\) and observe
+\begin{align*}
+\norm{g(1)-g(0)-(f''(x_0)\at t)\at s}&\le\norm{g(1)-g(0)-g'(0)}+\norm{g'(0)-(f''(x_0)\at t)\at s}\\
+	&\le\sup_{0\le\xi\le 1}\norm{g'(\xi)-g'(0)}+\beta\\
+	&\le\sup_{0\le\xi\le 1}\norm{g'(\xi)-(f''(x_0)\at t)\at s}\\
+	&\qquad+\norm{g'(0)-(f''(x_0)\at t)\at s}+\beta\\
+	&\le3\beta
+\end{align*}
 \end{rmk}
 
 % References
