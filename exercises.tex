@@ -19,6 +19,7 @@
 \newcommand{\sect}{\cap}
 \newcommand{\after}{\circ}
 \newcommand{\grad}{\nabla}
+\newcommand{\at}{\cdot}
 \newcommand{\downto}{\downarrow}
 \newcommand{\iso}{\cong}
 
@@ -304,6 +305,19 @@ where the product on the right is the dot product in~\(E\). The vector \(\grad f
 In~(8.10.1), let \(K\)~be \(\R\) or~\(\C\), \(\varphi=(\varphi_i):K^n\to K^m\), \(\psi=(\psi_i):K^m\to K^p\), and \(\theta=(\theta_i)=\psi\after\varphi:K^n\to K^p\). Then by the chain rule~(8.2.1), \(\theta\)~is differentiable and \(D\theta(x)=D\psi(\varphi(x))\after D\varphi(x)\). It follows from the remarks above~(8.10.1) that\footnote{The equation in the book is incorrect.}
 \[(D_k\theta_i(x))=(D_j\psi_i(\varphi(x)))(D_k\varphi_j(x))\]
 and similarly for the determinants when \(m=n=p\). This holds as long as the functions \(\varphi_i\) and~\(\psi_i\) are \emph{differentiable}, by a remark from~(8.9) above.
+\end{rmk}
+
+\subsection*{Section~12}
+\begin{rmk}
+In~(8.12.2), note \(D^2f(x_0)\at(s,t)\) and \(D^2f(x_0)\at(t,s)\) both approximate the change in the change in~\(f\) across opposing sides of the parallelogram in~\(A\) with vertices \(x_0\), \(x_0+s\), \(x_0+t\), and \(x_0+s+t\):
+\begin{align*}
+D^2f(x_0)\at(s,t)=(D^2f(x_0)\at s)\at t&\approx Df(x_0+s)\at t-Df(x_0)\at t\\
+	&\approx[f(x_0+s+t)-f(x_0+s)]-[f(x_0+t)-f(x_0)]\\
+	&=[f(x_0+t+s)-f(x_0+t)]-[f(x_0+s)-f(x_0)]\\
+	&\approx Df(x_0+t)\at s-Df(x_0)\at s\\
+	&\approx(D^2f(x_0)\at t)\at s=D^2f(x_0)\at(t,s)
+\end{align*}
+It is therefore plausible that \(D^2f(x_0)\at(s,t)=D^2f(x_0)\at(t,s)\), in other words that \(D^2f(x_0)\)~is symmetric. The proof uses the mean value theorem (8.6.2) to bound the distances between approximately equal quantities above, and ultimately to establish symmetry.
 \end{rmk}
 
 % References
