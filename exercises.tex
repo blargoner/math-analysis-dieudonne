@@ -285,7 +285,7 @@ In the proof of~(8.9.1), note (8.9.1.1)~holds as long as \(f\)~is \emph{differen
 \[Df(x_1,x_2)=D_1f(x_1,x_2)\after p_1+D_2f(x_1,x_2)\after p_2\]
 which implies\footnote{The equation in the book is incorrect.}
 \[Df=P_1\after D_1f+P_2\after D_2f\]
-where \(P_i(\varphi)=\varphi\after p_i\). Now \(P_i\in\L(\L(E_i,F),\L(E_1\times E_2,F))\) by (5.7.5) and~(5.5.1), so \(Df\)~is continuous if \(D_1f\) and~\(D_2f\) are.
+where \(P_k(\varphi)=\varphi\after p_k\). Now \(P_k\in\L(\L(E_k,F),\L(E_1\times E_2,F))\) by (5.7.5) and~(5.5.1), so \(Df\)~is continuous if \(D_1f\) and~\(D_2f\) are. Conversely, \(D_kf=I_k\after Df\), where \(I_k(\psi)=\psi\after i_k\), so \(D_kf\)~is continuous if \(Df\)~is.
 \end{rmk}
 
 \begin{rmk}
@@ -327,6 +327,28 @@ In the proof, let \(\beta=2\epsilon\norm{s}(\norm{s}+\norm{t})\) and observe
 	&\qquad+\norm{g'(0)-(f''(x_0)\at t)\at s}+\beta\\
 	&\le3\beta
 \end{align*}
+\end{rmk}
+
+\begin{rmk}
+If \(E=E_1\times\cdots\times E_n\) and~\(F\) are Banach spaces and \(f:E\to F\) is twice differentiable at \(x\in E\), then each \(D_i f\)~is differentiable at~\(x\) and
+\[D^2f(x)\at(s,t)=\sum_{i,j}D_iD_jf(x)\at(s_i,t_j)\]
+where \(s=(s_i)\), \(t=(t_i)\), and \(1\le i,j\le n\).
+\end{rmk}
+\begin{proof}
+By a remark from~(8.9) above, \(D_if=I_i\after Df\), so \(D_if\)~is differentiable at~\(x\) by the chain rule (8.2.1). Also \(Df=\sum P_i\after D_if\), so \(D^2f(x)=\sum P_i\after DD_if(x)\) by additivity (8.2.2) and the chain rule, and
+\begin{align*}
+D^2f(x)\at(s,t)=(D^2f(x)\at s)\at t&=\sum_{j=1}^n(DD_jf(x)\at s)\at t_j\\
+	&=\sum_{j=1}^n\left(\sum_{i=1}^nD_iD_jf(x)\at s_i\right)\at t_j\\
+	&=\sum_{i,j}D_iD_jf(x)\at(s_i,t_j)\qedhere
+\end{align*}
+\end{proof}
+
+\begin{rmk}
+In the previous remark, if \(E\)~is~\(\R^n\) (resp.~\(\C^n\)), then each~\(D_iD_jf(x)\) can be identified to a vector in~\(F\) (8.10) and
+\[D^2f(x)\at(s,t)=\sum_{i,j}D_iD_jf(x)\xi_i\eta_j\]
+where \(s=(\xi_i)\) and \(t=(\eta_i)\). Since \(D^2f(x)\)~is a bilinear mapping, it is uniquely determined by its values \(D^2f(x)\at(e_i,e_j)=D_iD_jf(x)\) on pairs of standard basis vectors, and since \(D^2f(x)\)~is symmetric (8.12.1), it follows that (8.12.2)
+\[D_iD_jf(x)=D^2f(x)\at(e_i,e_j)=D^2f(x)\at(e_j,e_i)=D_jD_if(x)\]
+If \(F\)~is~\(\R\) (resp.~\(\C\)), these values can be identified to scalars in the \emph{hessian matrix} \(Hf(x)=(D_iD_jf(x))\), which is symmetric. If \(s\)~and~\(t\) are identified to column vectors, we have \(D^2f(x)\at(s,t)=s^T Hf(x) t\).
 \end{rmk}
 
 % References
