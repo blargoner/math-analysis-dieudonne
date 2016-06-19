@@ -351,6 +351,19 @@ where \(s=(\xi_i)\) and \(t=(\eta_i)\). Since \(D^2f(x)\)~is a bilinear mapping,
 If \(F\)~is~\(\R\) (resp.~\(\C\)), these values can be identified to scalars in the \emph{hessian matrix} \(Hf(x)=(D_iD_jf(x))\), which is symmetric. If \(s\)~and~\(t\) are identified to column vectors, we have \(D^2f(x)\at(s,t)=s^T Hf(x) t\).
 \end{rmk}
 
+\begin{rmk}
+In the proof of~(8.12.4), for \(g(x)=D^{p-2}f(x)\at(t_3,\ldots,t_p)\),
+\[Dg(x)\at t_2=D^{p-1}f(x)\at(t_2,\ldots,t_p)\]
+by the remark above~(8.12.4), and hence
+\[D^2g(x)\at(t_1,t_2)=D^pf(x)\at(t_1,\ldots,t_p)\]
+by (8.12.1) and the remark above~(8.12.4) again.
+\end{rmk}
+
+\begin{rmk}
+In the proof of~(8.12.5), if \(D^mf\)~is \((n+1)\)-times differentiable, then \(D^mf\)~is \(n\)-times differentiable and \(D^n(D^m f)\)~is differentiable, by definition. By induction, \(f\)~is \((m+n)\)-times differentiable and \(D^{m+n}f=D^n(D^mf)\). Therefore \(f\)~is \((m+n+1)\)-times differentiable and
+\[D^{m+n+1}f=D(D^{m+n}f)=D(D^n(D^mf))=D^{n+1}(D^mf)\]
+\end{rmk}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{dieudonne} Dieudonn\'e, J. \textit{Foundations of Modern Analysis.} Academic Press, 1960.
