@@ -332,7 +332,7 @@ In the proof, let \(\beta=2\epsilon\norm{s}(\norm{s}+\norm{t})\) and observe
 \begin{rmk}
 If \(E=E_1\times\cdots\times E_n\) and~\(F\) are Banach spaces and \(f:E\to F\) is twice differentiable at \(x\in E\), then each \(D_i f\)~is differentiable at~\(x\) and
 \[D^2f(x)\at(s,t)=\sum_{i,j}D_iD_jf(x)\at(s_i,t_j)\]
-where \(s=(s_i)\), \(t=(t_i)\), and \(1\le i,j\le n\).
+where \(s=(s_i)\), \(t=(t_i)\), and the sum is taken over all pairs~\((i,j)\) with \(1\le i,j\le n\).
 \end{rmk}
 \begin{proof}
 By a remark from~(8.9) above, \(D_if=I_i\after Df\), so \(D_if\)~is differentiable at~\(x\) by the chain rule (8.2.1). Also \(Df=\sum P_i\after D_if\), so \(D^2f(x)=\sum P_i\after DD_if(x)\) by additivity (8.2.2) and the chain rule, and
@@ -368,6 +368,33 @@ In the proof of~(8.12.5), if \(D^mf\)~is \((n+1)\)-times differentiable, then \(
 The converse of~(8.12.5) holds, by induction on~\(n\). The result yields an exponentiation law for the differential operator:
 \[D^m D^n=D^{m+n}=D^n D^m\]
 \end{rmk}
+
+\begin{rmk}
+If \(E=E_1\times\cdots\times E_n\) and~\(F\) are Banach spaces and \(f:E\to F\) is \(p\)-times differentiable at \(x\in E\), then
+\[D^pf(x)\at(t_1,\ldots,t_p)=\sum_{j_1,\ldots,j_p}D_{j_1}\cdots D_{j_p}f(x)\at(t_{1,j_1},\ldots,t_{p,j_p})\tag{1}\]
+where \(t_i=(t_{i,j})\) for \(1\le i\le p\) and \(1\le j\le n\), and the sum is taken over all \(n^p\) \(p\)-tuples \((j_1,\ldots,j_p)\) with \(1\le j_i\le n\) for \(1\le i\le p\).
+\end{rmk}
+\begin{proof}
+By induction on~\(p\). For \(p=1\), the result holds by~(8.9). If the result holds for~\(p\) and \(f\)~is \((p+1)\)-times differentiable at~\(x\), then each partial \(D_{j_1}\cdots D_{j_p}f\) is differentiable at~\(x\) since
+\[D_{j_1}\cdots D_{j_p}f=I_{j_1,\ldots,j_p}\after D^pf\]
+where \(I_{j_1,\ldots,j_p}(\psi)=\psi\after(i_{j_1}\times\cdots\times i_{j_p})\). Here \(i_{j_k}:E_{j_k}\to E\) is just the canonical injection, and \(i_{j_1}\times\cdots\times i_{j_p}:E_{j_1}\times\cdots\times E_{j_p}\to E^p\) maps \((x_k)\) to~\((i_{j_k}(x_k))\). \(I_{j_1,\ldots,j_p}\)~is a continuous linear mapping from~\(\L_p(E,F)\) to the space of continuous \(p\)-linear mappings from \(E_{j_1}\times\cdots\times E_{j_p}\) to~\(F\). Differentiating both sides of~(1) with respect to~\(x\) (keeping the~\(t_i\) fixed) yields the result for~\(p+1\).
+\end{proof}
+
+\begin{rmk}
+If \(E\)~is \(\R^n\) or~\(\C^n\), the previous remark yields~(8.12.7). In this case each \(D_{j_1}\cdots D_{j_p}f(x)\) can be identified to a vector in~\(F\) and it follows from~(8.12.4) that
+\begin{align*}
+D_{j_1}\cdots D_{j_p}f(x)&=D^pf(x)\at(e_{j_1},\ldots,e_{j_p})\\
+	&=D^pf(x)\at(e_{j_{\sigma(1)}},\ldots,e_{j_{\sigma(p)}})=D_{j_{\sigma(1)}}\cdots D_{j_{\sigma(p)}}f(x)
+\end{align*}
+for any permutation~\(\sigma\) of \(1,\ldots,p\).
+\end{rmk}
+
+\begin{rmk}
+In the remark above,
+\[D^pf=\sum P_{j_1,\ldots,j_p}\after D_{j_1}\cdots D_{j_p}f\]
+where \(P_{j_1,\ldots,j_p}(\varphi)=\varphi\after(p_{j_1}\times\cdots\times p_{j_p})\). It follows from this and the converse relation above that \(D^pf\)~exists and is continuous if and only if each \(D_{j_1}\cdots D_{j_p}f\) exists and is continuous. If \(E\)~is \(\R^n\) or~\(\C^n\), this yields~(8.12.8).
+\end{rmk}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{dieudonne} Dieudonn\'e, J. \textit{Foundations of Modern Analysis.} Academic Press, 1960.
