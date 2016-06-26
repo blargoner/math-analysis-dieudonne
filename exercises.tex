@@ -28,10 +28,12 @@
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\abs}[1]{|{#1}|}
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
+\newcommand{\bignorm}[1]{\left\lVert{#1}\right\rVert}
 \newcommand{\innerprod}[2]{({#1}|{#2})}
 \newcommand{\cbprod}[2]{[{#1}\cdot{#2}]}
 \renewcommand{\d}[1]{\,d\!{#1}}
 \newcommand{\dx}{\d{x}}
+\newcommand{\dzeta}{\,d\zeta}
 
 % Theorems
 \theoremstyle{plain}
@@ -416,6 +418,31 @@ In the proof of~(8.13.1), we only have the \emph{real} exponential function from
 In~(8.13.2), taking \(P(X)=X^p\) and \(A=E=F=G=\R\) (resp. \(=\C\)) yields
 \[(fg)^{(p)}=\sum_{k=0}^p\binom{p}{k}f^{(p-k)}g^{(k)}\]
 by the binomial theorem.
+\end{rmk}
+
+\subsection*{Section~14}
+\begin{rmk}
+In Taylor's theorem~(8.14.2), let
+\[P(\alpha)=\sum_{k=0}^{p-1}\frac{(\xi-\alpha)^k}{k!}f^{(k)}(\alpha)\qquad\text{and}\qquad R(\alpha)=\int_{\alpha}^{\xi}\frac{(\xi-\zeta)^{p-1}}{(p-1)!}f^{(p)}(\zeta)\dzeta\]
+Then \(P(\alpha)\)~is the \((p-1)\)-th Taylor polynomial for~\(f\) about~\(\alpha\) evaluated at~\(\xi\), and \(R(\alpha)\)~is the corresponding integral remainder, so \(f(\xi)=P(\alpha)+R(\alpha)\).
+
+In the proof, for \(g(\zeta)=(\xi-\zeta)^{p-1}/(p-1)!\),
+\[g^{(k)}(\zeta)=(-1)^k\frac{(\xi-\zeta)^{p-1-k}}{(p-1-k)!}\qquad(0\le k\le p-1)\]
+and \(g^{(p)}(\zeta)=0\). Substituting \(p-1-k\) for~\(k\) yields
+\[\frac{(\xi-\zeta)^k}{k!}f^{(k)}(\zeta)=(-1)^{p-1-k}g^{(p-1-k)}(\zeta)f^{(k)}(\zeta)\qquad(0\le k\le p-1)\]
+It follows from~(8.14.1) that \(DP(\zeta)=g(\zeta)f^{(p)}(\zeta)\), so
+\[f(\xi)-P(\alpha)=P(\xi)-P(\alpha)=\int_{\alpha}^{\xi}g(\zeta)f^{(p)}(\zeta)\dzeta=R(\alpha)\]
+It is more natural to run this proof in reverse, first defining the remainder \(S(\alpha)=f(\xi)-P(\alpha)\), then computing \(DS(\zeta)=g(\zeta)f^{(p)}(\zeta)\), so \(S(\alpha)=S(\alpha)-S(\xi)=R(\alpha)\).
+\end{rmk}
+
+\begin{rmk}
+In the proof of Taylor's theorem~(8.14.3), \(\int_0^1(1-\zeta)^{p-1}/(p-1)!\dzeta=1/p!\), so the mean value theorem~(8.7.7) yields
+\begin{align*}
+&\quad\bignorm{\int_0^1\frac{(1-\zeta)^{p-1}}{(p-1)!}f^{(p)}(x+\zeta t)\dzeta-\frac{1}{p!}f^{(p)}(x)}\\
+&=\bignorm{\int_0^1\frac{(1-\zeta)^{p-1}}{(p-1)!}\left[f^{(p)}(x+\zeta t)-f^{(p)}(x)\right]\dzeta}\\
+&\le\int_0^1\frac{(1-\zeta)^{p-1}}{(p-1)!}\bignorm{f^{(p)}(x+\zeta t)-f^{(p)}(x)}\dzeta\\
+&\le p!\,\epsilon\int_0^1\frac{(1-\zeta)^{p-1}}{(p-1)!}\dzeta=\epsilon
+\end{align*}
 \end{rmk}
 
 % References
