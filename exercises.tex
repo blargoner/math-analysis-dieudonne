@@ -333,11 +333,13 @@ In the remarks above~(8.9.1), the partial mappings \(x_1\mapsto f(x_1,a_2)\) and
 \end{rmk}
 
 \begin{rmk}
-In the proof of~(8.9.1), note (8.9.1.1)~holds as long as \(f\)~is \emph{differentiable} at~\((x_1,x_2)\); it implies
+In the proof of~(8.9.1), we see that \emph{differentiability} alone implies partial differentiability (but the converse is not true!) and (8.9.1.1)~holds as long as \(f\)~is differentiable at~\((x_1,x_2)\); it implies
 \[Df(x_1,x_2)=D_1f(x_1,x_2)\after p_1+D_2f(x_1,x_2)\after p_2\]
 which implies\footnote{The equation in the book is incorrect.}
 \[Df=P_1\after D_1f+P_2\after D_2f\]
 where \(P_k(\varphi)=\varphi\after p_k\). Now \(P_k\in\L(\L(E_k,F),\L(E_1\times E_2,F))\) by (5.7.5) and~(5.5.1), so \(Df\)~is continuous if \(D_1f\) and~\(D_2f\) are. Conversely, \(D_kf=I_k\after Df\), where \(I_k(\psi)=\psi\after i_k\), so \(D_kf\)~is continuous if \(Df\)~is.
+
+In the proof that continuous partial differentiability implies (continuous) differentiability, it is not sufficient to appeal to the existence of~\(D_2f(a_1+t_1,a_2)\) to establish the third displayed inequality, because then \(t_2\)~would depend on~\(t_1\); it is necessary to appeal to the continuity of~\(D_2f\) to ensure the inequality holds for all sufficiently small \(t_1\)~and~\(t_2\).
 \end{rmk}
 
 \begin{rmk}
