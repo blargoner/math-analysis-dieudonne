@@ -71,12 +71,52 @@ This document contains notes and exercises from~\cite{dieudonne}.
 \end{itemize}
 
 \section*{Chapter~III}
+\subsection*{Section~13}
+\begin{rmk}
+For a sequence to converge to a point in a metric space, a necessary and sufficient condition is that every subsequence have a subsequence which converges to the point.
+\end{rmk}
+\begin{proof}
+The condition is necessary by~(3.13.10). If \((x_n)\)~does not converge to~\(x\) in~\(E\), then there is \(\alpha>0\) and a subsequence~\((x_{n_k})\) such that \(x_{n_k}\in E-B(x;\alpha)\) for all \(k\ge 1\). Since \(E-B(x;\alpha)\)~is closed by~(3.5.1), any cluster value of~\((x_{n_k})\) is not equal to~\(x\) by (3.13.7) and~(3.8.6).
+\end{proof}
+
 \subsection*{Section~14}
 \begin{rmk}
 If \(f\)~is a mapping from a metric space~\(E\) into a metric space~\(E'\), then a necessary and sufficient condition for \(f\)~to be continuous at \(x\in E\) is that the oscillation of~\(f\) at~\(x\), with respect to~\(E\), be~\(0\).
 \end{rmk}
 \begin{proof}
 By definition and~(3.11.2).
+\end{proof}
+
+\subsection*{Section~16}
+We provide an alternative proof of (3.16.1) (a)\(\implies\)(b):
+\begin{prop}[3.16.1]
+If \(E\)~is a compact metric space, then any sequence in~\(E\) has at least one cluster value in~\(E\).
+\end{prop}
+\begin{proof}
+Let \((x_n)\)~be a sequence in~\(E\). If the set~\(\{x_n\}\) is finite, then at least one value~\(x_n\) must occur infinitely many times in~\((x_n)\) and so is a cluster value of~\((x_n)\). If \(\{x_n\}\)~is infinite and \((x_n)\)~has no cluster value in~\(E\), then for every \(x\in E\) there is an open neighborhood of~\(x\) containing at most one~\(x_n\),  by~(3.8.12) applied to \(\{x_n\}-\{x\}\) and~(3.13.11). These neighborhoods form an open covering of~\(E\) with no finite subcovering, so \(E\)~is not compact.
+\end{proof}
+
+\begin{rmk}
+The proof of~(3.16.3) actually shows that a metric space is finite if and only if it is compact and discrete. This result shows the relationship between set-theoretic and topological finiteness for metric spaces.
+\end{rmk}
+
+\noindent We provide an alternative proof of~(3.16.4):
+\begin{prop}[3.16.4]
+In a compact metric space~\(E\), any sequence~\((x_n)\) which has only one cluster value~\(a\) converges to~\(a\).
+\end{prop}
+\begin{proof}
+By~(3.16.1), every subsequence of~\((x_n)\) has a subsequence converging to~\(a\), from which the result follows by a remark from~(3.13) above.
+\end{proof}
+
+\noindent We provide an alternative proof of~(3.16.5):
+\begin{prop}[3.16.5]
+Any continuous mapping~\(f\) of a compact metric space~\(E\) into a metric space~\(E'\) is uniformly continuous.
+\end{prop}
+\begin{proof}
+Let \(\epsilon>0\). For each \(x\in E\), there is \(\delta_x>0\) such that \(d(x,y)<\delta_x\) implies \(d'(f(x),f(y))<\epsilon/2\) for all \(y\in E\) (3.11.2). Let \(B_x=B(x;\delta_x/2)\). Then \(\{B_x\}\)~is an open cover of~\(E\), which has a finite subcover \(\{B_{x_1},\ldots,B_{x_n}\}\) by compactness of~\(E\). Let \(\delta=\min\{\delta_{x_1},\ldots,\delta_{x_n}\}/2>0\). If \(x,y\in E\) and \(d(x,y)<\delta\), then \(x\in B_{x_k}\) for some \(1\le k\le n\), so \(d(x,x_k)<\delta_{x_k}/2<\delta_{x_k}\) and
+\[d(y,x_k)\le d(x,y)+d(x,x_k)<\delta_{x_k}/2+\delta_{x_k}/2=\delta_{x_k}\]
+so
+\[d'(f(x),f(y))\le d'(f(x),f(x_k))+d'(f(x_k),f(y))<\epsilon/2+\epsilon/2=\epsilon\qedhere\]
 \end{proof}
 
 \section*{Chapter~IV}
