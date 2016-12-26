@@ -16,12 +16,15 @@
 \renewcommand{\L}{\mathcal{L}}
 
 \newcommand{\union}{\cup}
+\newcommand{\bigunion}{\bigcup}
 \newcommand{\sect}{\cap}
+\newcommand{\bigsect}{\bigcap}
 \newcommand{\after}{\circ}
 \newcommand{\grad}{\nabla}
 \newcommand{\at}{\cdot}
 \newcommand{\downto}{\downarrow}
 \newcommand{\iso}{\cong}
+\newcommand{\diam}{\delta}
 
 \newcommand{\conj}[1]{\overline{#1}}
 \newcommand{\closure}[1]{\overline{#1}}
@@ -71,6 +74,27 @@ This document contains notes and exercises from~\cite{dieudonne}.
 \end{itemize}
 
 \section*{Chapter~III}
+\subsection*{Section~4}
+\begin{rmk}
+If \(E\)~is a metric space with \(A\subseteq E\) nonempty and \(x,y\in E\), then
+\[d(x,y)\le d(x,A)+\diam(A)+d(y,A)\]
+\end{rmk}
+\begin{proof}
+Let \(\epsilon>0\). By definition, there are \(a,b\in A\) with \(d(x,a)<d(x,A)+\epsilon/2\) and \(d(y,b)<d(y,A)+\epsilon/2\). By the triangle inequality and definition of diameter,
+\[d(x,y)\le d(x,a)+d(a,b)+d(y,b)<d(x,A)+\diam(A)+d(y,A)+\epsilon\]
+Since \(\epsilon\)~is arbitrary, the result follows.
+\end{proof}
+
+\subsection*{Section~8}
+\begin{rmk}
+If \(E\)~is a metric space and \(A\subseteq E\) is nonempty, then \(\diam(A)=\diam(\closure{A})\).
+\end{rmk}
+\begin{proof}
+\(\diam(A)\le\diam(\closure{A})\) since \(A\subseteq\closure{A}\). Conversely if \(x,y\in\closure{A}\), then
+\[d(x,y)\le d(x,A)+\diam(A)+d(y,A)=\diam(A)\]
+by a remark from~(3.4) above and~(3.8.9). It follows that \(\diam(\closure{A})\le\diam(A)\).
+\end{proof}
+
 \subsection*{Section~13}
 \begin{rmk}
 For a sequence to converge to a point in a metric space, a necessary and sufficient condition is that every subsequence have a subsequence which converges to the point.
@@ -117,6 +141,22 @@ Let \(\epsilon>0\). For each \(x\in E\), there is \(\delta_x>0\) such that \(d(x
 \[d(y,x_k)\le d(x,y)+d(x,x_k)<\delta_{x_k}/2+\delta_{x_k}/2=\delta_{x_k}\]
 so
 \[d'(f(x),f(y))\le d'(f(x),f(x_k))+d'(f(x_k),f(y))<\epsilon/2+\epsilon/2=\epsilon\qedhere\]
+\end{proof}
+
+\subsection*{Section~17}
+\begin{rmk}
+If \(E\)~is a metric space and \(A\subseteq E\) is precompact, then \(\closure{A}\)~is precompact.
+\end{rmk}
+\begin{proof}
+Let \(\epsilon>0\). By definition, there are nonempty subsets \(S_1,\ldots,S_n\) of~\(A\) with \(A\subseteq\bigunion S_k\) and \(\diam(S_k)<\epsilon\). Now \(\closure{S_k}\subseteq\closure{A}\subseteq\closure{\bigunion S_k}=\bigunion\closure{S_k}\) by (3.8.7) and~(3.8.8), and \(\diam(\closure{S_k})=\diam(S_k)\) by a remark from~(3.8) above. It follows that \(\closure{A}\)~is precompact.
+\end{proof}
+
+\noindent We provide an alternative proof of the second part of~(3.17.5):
+\begin{prop}[3.17.5]
+If \(E\)~is a complete metric space and \(A\subseteq E\) is precompact, then \(A\)~is relatively compact.
+\end{prop}
+\begin{proof}
+\(\closure{A}\)~is precompact by the previous remark and is complete by~(3.14.5), hence is compact by~(3.16.1).
 \end{proof}
 
 \section*{Chapter~IV}
