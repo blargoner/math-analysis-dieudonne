@@ -5,6 +5,7 @@
 
 \newcommand{\N}{\mathbf{N}}
 \newcommand{\Nex}{\overline{\N}}
+\newcommand{\Q}{\mathbf{Q}}
 \newcommand{\R}{\mathbf{R}}
 \newcommand{\Rp}{\R_+}
 \newcommand{\Rps}{\Rp^*}
@@ -184,6 +185,13 @@ The requirement that \(A_1\times A_2\ne\emptyset\) is essential. For example, \(
 \end{rmk}
 
 \section*{Chapter~IV}
+\subsection*{Section~1}
+\begin{rmk}
+In the latter part of the proof of~(4.1.3), alternatively note for fixed \(x\in\R\) that the mappings
+\[r\mapsto rx\mapsto f(rx)\qquad\text{and}\qquad r\mapsto rf(x)\]
+are continuous from~\(\R\) to~\(\R\) by (4.1.2) and~(3.11.5), and agree on~\(\Q\), hence agree on~\(\R\) by the principle of extension of identities~(3.15.2).
+\end{rmk}
+
 \subsection*{Section~3}
 \begin{rmk}
 In the proof of~(4.3.1), intuitively we know that \(f=\log_a\). Recall by the density of the rationals in the reals (2.2.16) that \emph{a real number is the supremum of the set of rationals less than it}. Therefore \(\log_a x\)~is just the supremum of the set of rationals~\(m/n\) with \(m/n\le\log_a x\), or equivalently \(a^{m/n}\le x\), or equivalently \(a^m\le x^n\); that is, \(\log_a x=\sup A_x\). Since neither \(\log_a x\) nor~\(a^{m/n}\) are defined yet, but \(a^m\)~and~\(x^n\) are, it is natural to show that \(f(x)=\sup A_x\) for uniqueness.
